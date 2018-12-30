@@ -25,8 +25,12 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
                                                   password: nil,
                                                   transport: .cleartext)
     let postgres = PostgreSQLDatabase(config: postgresConfig)
-    let databases = DatabaseConfig()
+    var databases = DatabaseConfig()
     databases.add(database: postgres, as: .psql)
+
+    /// Database Migrations
+    var migrations = MigrationConfig()
+    migrations.add(model: Driver.self, database: .psql)
 
     /// Register middleware
     var middlewares = MiddlewareConfig() // Create _empty_ middleware config
@@ -34,4 +38,5 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     middlewares.use(ErrorMiddleware.self) // Catches errors and converts to HTTP response
     services.register(middlewares)
     services.register(databases)
+    services.register(migrations)
 }
