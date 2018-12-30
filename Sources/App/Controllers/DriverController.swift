@@ -18,6 +18,7 @@ final class DriverController {
     return try req.parameters.next(Driver.self).flatMap { driver in
       return try req.content.decode(Driver.self).flatMap { updatedContent in
         driver.name = updatedContent.name
+        driver.team = updatedContent.team
         return driver.save(on: req)
       }
     }
@@ -34,7 +35,7 @@ final class DriverController {
   func show(_ req: Request) throws -> Future<View> {
     return Driver.query(on: req).all().flatMap { drivers in
       let data = ["drivers" : drivers]
-      return try req.view().render("client/show", data)
+      return try req.view().render("client/drivers/show", data)
     }
   }
 }

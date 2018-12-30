@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>#get(title)</title>
-	<link rel="stylesheet" href="/styles/app.css">
-</head>
-<body>
-    #get(body)
-</body>
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <title>#get(title)</title>
+    <link rel="stylesheet" href="/styles/style.css">
+  </head>
+  <body>
+    <div id="wrap">
+			<h1>Zap Talk Swift Server Side com Vapor</h1>
+		  <p class="subtitle">Todo conteúdo abaixo está sendo alimentado pela API do projeto.</p>
+		  <hr />
+			#get(body)
+    </div>
+  </body>
 </html>

@@ -1,0 +1,16 @@
+#set("title") { Drivers List }
+
+#set("body") {
+  <div class="container">
+    <div class="card">
+      <div class="card-content">
+        <h3>Pilotos</h3>
+        #for(driver in drivers) {
+          <p>#(driver.name) from #(driver.team)</p>
+        }
+      </div>
+    </div>
+  </div>
+}
+
+#embed("base")

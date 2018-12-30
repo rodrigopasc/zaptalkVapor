@@ -25,7 +25,7 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
                                                   password: nil,
                                                   transport: .cleartext)
     let postgres = PostgreSQLDatabase(config: postgresConfig)
-    var databases = DatabaseConfig()
+    var databases = DatabasesConfig()
     databases.add(database: postgres, as: .psql)
 
     /// Database Migrations
