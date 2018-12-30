@@ -2,11 +2,11 @@ import Foundation
 import Vapor
 
 final class DriverController {
+  // MARK: API methods.
+
   func index(_ req: Request) throws -> Future<[Driver]> {
     return Driver.query(on: req).all()
   }
-
-  // MARK: API
 
   func create(_ req: Request) throws -> Future<Driver> {
     return try req.content.decode(Driver.self).flatMap { driver in
@@ -27,5 +27,14 @@ final class DriverController {
     return try req.parameters.next(Driver.self).flatMap { driver in
       return driver.delete(on: req)
     }.transform(to: .noContent)
+  }
+
+  // MARK: Client methods.
+
+  func show(_ req: Request) throws -> Future<View> {
+    return Driver.query(on: req).all().flatMap { drivers in
+      let data = ["drivers" : drivers]
+      return try req.view().render("client/show", data)
+    }
   }
 }

@@ -1,0 +1,10 @@
+#set("title") { Drivers List }
+
+#set("body") {
+  <h2>Pilotos</h2>
+  #for(driver in drivers) {
+    <p>#(driver.name)</p>
+  }
+}
+
+#embed("base")
