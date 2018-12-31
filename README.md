@@ -58,7 +58,7 @@ $ vapor xcode
 
 ### API
 * Create - POST http://localhost:8080/api/drivers
-Com o seguinte body:
+com o seguinte body:
 ```
 {
     "name": "Ayrton Senna",
@@ -68,7 +68,7 @@ Com o seguinte body:
 
 * Read - GET http://localhost:8080/api/drivers
 * Update - PATCH http://localhost:8080/api/drivers/1 (onde 1 é id do registro a ser atualizado)
-Com o seguinte body:
+com o seguinte body:
 ```
 {
     "name": "Novo nome",
