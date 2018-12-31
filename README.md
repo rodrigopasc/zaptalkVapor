@@ -62,7 +62,7 @@ com o seguinte body:
 ```
 {
     "name": "Ayrton Senna",
-    "team": "McLaren"
+    "team": "McLaren Honda"
 }
 ```
 
