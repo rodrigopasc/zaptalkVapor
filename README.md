@@ -32,7 +32,7 @@
 ----
 
 ## Configurando o Banco de Dados
-Após clonar o repositório, crie um banco de dados PostgreSQL e atualize as informações para conexão com o banco no seguinte arquivo: `Sources/configure.swift`
+Após clonar o repositório, crie um banco de dados PostgreSQL e atualize as informações de conexão no arquivo: `Sources/configure.swift`
 
 ## Executando o Projeto
 Execute o seguinte comando para gerar a build do projeto:
