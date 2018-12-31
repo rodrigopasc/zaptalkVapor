@@ -18,3 +18,61 @@
         <img src="http://img.shields.io/badge/swift-4.1-brightgreen.svg" alt="Swift 4.1">
     </a>
 </p>
+
+# Zap Talk Swift Server Side
+> Exemplo de projeto backend com Vapor 3.0
+
+## Requisitos do ambiente
+
+### Dependências e Versões
+* Swift 4.2
+* PostgreSQL 11
+* Vapor 3.0
+
+----
+
+## Executando o Projeto
+
+Após clonar o repositório, execute o seguinte comando para gerar a build do projeto:
+```sh
+$ vapor build
+```
+
+Em seguida, inicie o projeto utilizando:
+```sh
+$ vapor run
+```
+
+### Usuários de macOS
+Também há opção de utilizar o Xcode com o projeto. Para isso, execute:
+```sh
+$ vapor xcode
+```
+
+----
+
+## End Points
+
+### Client
+* http://localhost:8080/client/drivers
+
+### API
+* Create - POST http://localhost:8080/api/drivers
+Com o seguinte body:
+```
+{
+    "name": "Ayrton Senna",
+    "team": "McLaren"
+}
+```
+
+* Read - GET http://localhost:8080/api/drivers
+* Update - PATCH http://localhost:8080/api/drivers/1 (onde 1 é id do registro a ser atualizado)
+Com o seguinte body:
+```
+{
+    "name": "Novo nome",
+    "team": "Novo time"
+}
+```
+* Destroy - DELETE http://localhost:8080/api/drivers/1 (onde 1 é id do registro a ser removido)
